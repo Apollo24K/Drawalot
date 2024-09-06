@@ -39,9 +39,9 @@ Welcome to **Drawalot**, an anime-themed card collection Discord bot! Players ca
     TOKENS=your-discord-bot-token (can be multiple, separate by comma ",")
     CLIENT_IDS=your-discord-bot-client-id (can be multiple, separate by comma ",")
     PREFIX=!
-    PG_DATABASE=database-name
-    PG_PASSWORD=database-password
-    PG_PORT=database-port
+    PG_DATABASE=your-database-name
+    PG_PASSWORD=your-database-password
+    PG_PORT=your-database-port
     ADMINS=your-discord-id
     VERSION=0.1.2
     ```
