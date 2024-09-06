@@ -101,11 +101,11 @@ We welcome contributions from the community! Here’s how you can get involved:
 
 - Make sure your code follows the project's coding style and conventions.
 - Test your changes before submitting a pull request.
-- Contributions must comply with the [Drawalot License](./LICENSE).
+- Contributions must comply with the [Drawalot License](./LICENSE.txt).
 
 ## License
 
-This project is licensed under the **Drawalot License**. See the [LICENSE](./LICENSE) file for details.
+This project is licensed under the **Drawalot License**. See the [LICENSE](./LICENSE.txt) file for details.
 
 ## Support
 
