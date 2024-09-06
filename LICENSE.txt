@@ -1,0 +1,34 @@
+# Drawalot License Agreement
+
+Effective Date: 06.09.2024
+
+1. Grant of License
+Subject to the terms and conditions of this License, Apollo24 (the "Licensor") grants you (the "User") a revocable, non-exclusive, non-transferable license to access, view, and contribute to the source code of "Drawalot," a Discord bot for anime card collection (the "Software").
+
+2. Permitted Use
+You are permitted to:
+a) View the Source Code: You may access and review the source code for learning purposes.
+b) Contribute to the Main Project: You may submit code contributions (pull requests, patches, suggestions, etc.) to the Software's repository. Contributions are subject to approval by the Licensor and may be integrated into the main project at the Licensor's sole discretion.
+
+3. Restrictions on Use
+You are NOT permitted to:
+a) Copy or Reuse the Code: You may not copy, modify, distribute, or otherwise use any part of the Software's source code for personal projects, commercial projects, or any other purpose outside of contributing to the main project.
+b) Create Derivative Works: You may not create derivative works, fork, or alter the Software for your own use or for any third-party use, whether for financial gain or otherwise.
+c) Use for Financial Purposes: You may not use any part of the Software, including its code or assets, for financial purposes or in any commercial software.
+d) Distribute: You may not publicly distribute, sell, sublicense, lease, or otherwise make the Software available in any form to third parties without prior written consent from the Licensor.
+
+4. Ownership
+The Software, including all contributions submitted by Users and integrated into the project, remains the sole property of the Licensor. By contributing to the Software, you agree that your contributions become part of the Software and are subject to this License.
+
+5. No Warranty
+The Software is provided "AS IS," without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall the Licensor be liable for any claims, damages, or other liability arising from the use of the Software.
+
+6. Termination
+This License will terminate immediately upon violation of any of the above restrictions. Upon termination, you must cease all use of the Software and destroy any copies in your possession or control.
+
+7. Contributions
+By submitting a contribution to the Software, you agree to transfer any ownership rights of that contribution to the Licensor. You retain the right to be credited as the contributor, but you agree that the Licensor can use, modify, and redistribute the contribution under this License without restriction.
+
+---
+
+By accessing or contributing to the Software, you agree to be bound by the terms of this License.
