@@ -15,6 +15,7 @@ Welcome to **Drawalot**, an anime-themed card collection Discord bot! Players ca
 ### Prerequisites
 
 - Node.js (v18 or higher)
+- TypeScript (v5.0 or higher)
 - [Discord bot token](https://discord.com/developers/applications)
 - A PostgreSQL database for storing user and game data
 
@@ -23,8 +24,7 @@ Welcome to **Drawalot**, an anime-themed card collection Discord bot! Players ca
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/drawalot.git
-    cd drawalot
+    git clone https://github.com/Apollo24K/Drawalot.git
     ```
 
 2. Install dependencies:
@@ -36,14 +36,34 @@ Welcome to **Drawalot**, an anime-themed card collection Discord bot! Players ca
 3. Create a `.env` file and add your Discord bot token and database credentials:
 
     ```bash
-    DISCORD_TOKEN=your-discord-token
-    DATABASE_URL=your-database-url
+    TOKENS=your-discord-token (can be multiple, separate by comma ",")
+    CLIENT_IDS=your-discord-client-id (can be multiple, separate by comma ",")
+    PREFIX=!
+    PG_DATABASE=database-name
+    PG_PASSWORD=database-password
+    PG_PORT=database-port
+    ADMINS=your-discord-id
+    VERSION=0.1.2
     ```
 
-4. Run the bot:
+4. Compile the TypeScript code:
+
+    ```bash
+    npm run build
+    ```
+    or
+    ```bash
+    tsc
+    ```
+
+5. Run the bot:
 
     ```bash
     npm start
+    ```
+    or
+    ```bash
+    node .
     ```
 
 ### Basic Commands
