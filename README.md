@@ -14,7 +14,7 @@ Welcome to **Drawalot**, an anime-themed card collection Discord bot! Players ca
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js (v18 or higher)
 - [Discord bot token](https://discord.com/developers/applications)
 - A PostgreSQL database for storing user and game data
 
