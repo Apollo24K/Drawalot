@@ -36,8 +36,8 @@ Welcome to **Drawalot**, an anime-themed card collection Discord bot! Players ca
 3. Create a `.env` file and add your Discord bot token and database credentials:
 
     ```bash
-    TOKENS=your-discord-token (can be multiple, separate by comma ",")
-    CLIENT_IDS=your-discord-client-id (can be multiple, separate by comma ",")
+    TOKENS=your-discord-bot-token (can be multiple, separate by comma ",")
+    CLIENT_IDS=your-discord-bot-client-id (can be multiple, separate by comma ",")
     PREFIX=!
     PG_DATABASE=database-name
     PG_PASSWORD=database-password
