@@ -68,10 +68,8 @@ Welcome to **Drawalot**, an anime-themed card collection Discord bot! Players ca
 
 ### Basic Commands
 
-- `!draw` - Draw a random card.
-- `!collection` - View your card collection.
-- `!trade @user` - Initiate a trade with another player.
-- `!leaderboard` - View the top players.
+- `/draw` - Draw a random card.
+- `/inventory` - View your card collection.
 
 ## Contributing
 
@@ -83,3 +81,8 @@ We welcome contributions from the community! Here’s how you can get involved:
    ```bash
    git checkout -b feature-name
    ```
+
+3. Make your changes and test them.
+
+
+
