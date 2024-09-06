@@ -83,6 +83,34 @@ We welcome contributions from the community! Here’s how you can get involved:
    ```
 
 3. Make your changes and test them.
+4. Commit your changes:
 
+   ```bash
+   git commit -m "Add new feature or fix"
+   ```
 
+5. Push to your branch:
 
+   ```bash
+   git push origin feature-name
+   ```
+
+6. Create a pull request on GitHub to merge your changes into the main project.
+
+### Contribution Guidelines
+
+- Make sure your code follows the project's coding style and conventions.
+- Test your changes before submitting a pull request.
+- Contributions must comply with the [Drawalot License](./LICENSE).
+
+## License
+
+This project is licensed under the **Drawalot License**. See the [LICENSE](./LICENSE) file for details.
+
+## Support
+
+If you encounter any issues or have questions, feel free to open an issue in the GitHub repository or reach out to us on Discord.
+
+---
+
+Thank you for checking out **Drawalot**! We hope you enjoy collecting your favorite anime cards! 🎴
