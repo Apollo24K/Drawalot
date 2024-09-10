@@ -42,6 +42,7 @@ Welcome to **Drawalot**, an anime-themed card collection Discord bot! Players ca
     PG_DATABASE=your-database-name
     PG_PASSWORD=your-database-password
     PG_PORT=your-database-port
+    RANK_AUTH=your-rank.top-shop-auth-key
     ADMINS=your-discord-id
     VERSION=0.1.2
     ```
