@@ -90,58 +90,6 @@ export const query = async (text: string, params?: any[]) => {
         CONSTRAINT unique_id_char_id UNIQUE (id, char_id)
     )`);
 
-    // await query(`INSERT INTO users (id, name) VALUES
-    //     ('489490486734880774', 'Apollo24')
-    // `, []);
-
-    // await query(`INSERT INTO inventory (user_id, char_id, rarity) VALUES
-    //     ('489490486734880774', '1', '2'),
-    //     ('489490486734880774', '2', '3'),
-    //     ('489490486734880774', '2', '4')
-    // `, []);
-
-    // // Drop rows
-    // await query(`DELETE FROM inventory`);
-    // await query(`DELETE FROM characters`);
-    // await query(`DELETE FROM anime`);
-
-
-    // await query(`INSERT INTO anime (name, aliases) VALUES 
-    //     ($1, $2),
-    //     ($3, $4),
-    //     ($5, $6)
-    // `, [
-    //     'Naruto', '{"Naruto Shippuden"}',
-    //     'One Piece', '{"OP"}',
-    //     'Attack on Titan', '{"Shingeki no Kyojin"}'
-    // ]);
-
-    // await query(`INSERT INTO characters (name, anime_id, aliases, image_url, rarity, gender) VALUES 
-    //     ($1, $2, $3, $4, $5, $6),
-    //     ($7, $8, $9, $10, $11, $12),
-    //     ($13, $14, $15, $16, $17, $18)
-    // `, [
-    //     'Naruto Uzumaki', 1, '{"Naruto"}', 'https://i.ibb.co/hL8D22k/c.png', 5, 'Male',
-    //     'Monkey D. Luffy', 2, '{"Luffy"}', 'https://i.ibb.co/mTx4pZ4/c.png', 5, 'Male',
-    //     'Eren Yeager', 3, '{"Eren Yaeger","Eren Jäger"}', 'https://i.ibb.co/Npqcn0y/c.png', 5, 'Male'
-    // ]);
-
-
-    // let aa = await query(`SELECT * FROM anime LIMIT 5`);
-    // let ab = await query(`SELECT * FROM inventory`);
-    // console.log(aa);
-    // console.log(ab);
-
-
-
-    // await query(`VACUUM`);
-
-    // Testing
-    // let aa = await query(`SELECT name, id, lang, deleteacc FROM users`);
-    // let ab = await query(`SELECT id, charid, print FROM characters`);
-    // console.log(aa);
-    // console.log(ab);
-
 })();
 
 
