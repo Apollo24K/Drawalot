@@ -1,0 +1,20 @@
+{
+    "name": "drawalot",
+    "version": "0.1.2",
+    "description": "Draw a lot of characters! Or help me come up with a better name...",
+    "main": "build/index.js",
+    "scripts": {
+        "start": "node .",
+        "build": "tsc"
+    },
+    "author": "Apollo24",
+    "dependencies": {
+        "@discordjs/rest": "^1.1.0",
+        "@types/node": "^18.7.14",
+        "discord.js": "14.15.2",
+        "dotenv": "^16.0.2"
+    },
+    "devDependencies": {
+        "typescript": "^4.8.2"
+    }
+}
