@@ -1,4 +1,4 @@
-# Drawalot, a Camelot spin-off
+# Drawalot, a [Camelot](https://rank.top/bot/camelot) spin-off
 
 Welcome to **Drawalot**, an anime-themed card collection Discord bot! Players can draw cards, collect rare items, and trade with others in this exciting game.
 
