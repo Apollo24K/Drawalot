@@ -80,7 +80,7 @@ const command: GuildActivity = {
             const collector = msg.createMessageComponentCollector({ componentType: ComponentType.Button, time: 180000 });
 
             collector.on('collect', async r => {
-                if (r.user.bot || !character) return;
+                if (r.user.bot || !character || message.client.bannedUsers.has(r.user.id)) return;
 
                 // Check if user is on cooldown
                 if (userOnCooldown.has(r.user.id) && Date.now() < userOnCooldown.get(r.user.id)!) return replyToButton(r, { content: `You're on cooldown! Please wait ${Math.floor((userOnCooldown.get(r.user.id)! - Date.now()) / 1000)} seconds`, ephemeral: true });

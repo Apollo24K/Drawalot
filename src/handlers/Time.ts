@@ -22,7 +22,8 @@ const handler: BotHandler = {
             // Every 2 hours
             if (now.getHours() % 2 === 0 && now.getMinutes() === 0) {
                 // Reset Draws and Claims
-                await query(`UPDATE users SET draws = 0, claims = 0`);
+                await query(`UPDATE users SET draws = 0 WHERE draws > 0`);
+                await query(`UPDATE users SET claims = 0 WHERE claims > 0`);
             };
 
             // Every hour

@@ -184,42 +184,52 @@ export const serverPremium: PremiumInfo[] = [
     },
 ];
 
+export const defaultDropRates: DropRates = [
+    { rarity: 0, rate: 0.58 },
+    { rarity: 1, rate: 0.25 },
+    { rarity: 2, rate: 0.11 },
+    { rarity: 3, rate: 0.048 },
+    { rarity: 4, rate: 0.0095 },
+    { rarity: 5, rate: 0.0024 },
+    { rarity: 6, rate: 0.0001 },
+];
+
 export const activityDropRates: DropRates[] = [
-    [ // Tier 0
+    [ // Server Premium Tier 0
         { rarity: 0, rate: 0.58 },
         { rarity: 1, rate: 0.25 },
         { rarity: 2, rate: 0.11 },
-        { rarity: 3, rate: 0.042 },
-        { rarity: 4, rate: 0.012 },
-        { rarity: 5, rate: 0.0056 },
-        { rarity: 6, rate: 0.0004 },
+        { rarity: 3, rate: 0.043 },
+        { rarity: 4, rate: 0.011 },
+        { rarity: 5, rate: 0.0057 },
+        { rarity: 6, rate: 0.0003 },
     ],
-    [ // Tier 1
+    [ // Server Premium Tier 1
         { rarity: 0, rate: 0.26 },
         { rarity: 1, rate: 0.49 },
         { rarity: 2, rate: 0.166 },
         { rarity: 3, rate: 0.063 },
         { rarity: 4, rate: 0.014 },
-        { rarity: 5, rate: 0.0064 },
-        { rarity: 6, rate: 0.0006 },
+        { rarity: 5, rate: 0.0065 },
+        { rarity: 6, rate: 0.0005 },
     ],
-    [ // Tier 2
+    [ // Server Premium Tier 2
         { rarity: 0, rate: 0 },
         { rarity: 1, rate: 0.65 },
         { rarity: 2, rate: 0.25 },
         { rarity: 3, rate: 0.074 },
         { rarity: 4, rate: 0.017 },
-        { rarity: 5, rate: 0.0082 },
-        { rarity: 6, rate: 0.0008 },
+        { rarity: 5, rate: 0.0083 },
+        { rarity: 6, rate: 0.0007 },
     ],
-    [ // Tier 3
+    [ // Server Premium Tier 3
         { rarity: 0, rate: 0 },
         { rarity: 1, rate: 0.54 },
         { rarity: 2, rate: 0.33 },
-        { rarity: 3, rate: 0.095 },
-        { rarity: 4, rate: 0.023 },
-        { rarity: 5, rate: 0.011 },
-        { rarity: 6, rate: 0.001 },
+        { rarity: 3, rate: 0.097 },
+        { rarity: 4, rate: 0.021 },
+        { rarity: 5, rate: 0.0111 },
+        { rarity: 6, rate: 0.0009 },
     ],
 ];
 

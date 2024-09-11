@@ -80,6 +80,7 @@ interface UserSchema {
     drawstotal: number;
     claims: number;
     claimstotal: number;
+    drawresets: number;
     votestotal: number;
     votereminder: boolean;
     transactions: RankShopTransaction[];
@@ -120,6 +121,14 @@ interface InventorySchema {
     rarity: number;
     alias?: string;
     custom_image_url?: string;
+}
+
+interface BanSchema {
+    id: string;
+    banned_by: string;
+    reason?: string;
+    expires?: Date;
+    created: Date;
 }
 
 interface executeSlashCommand {
@@ -223,6 +232,7 @@ declare module "discord.js" {
     export interface Client {
         id: string;
         token: string;
+        bannedUsers: Collection<string, BanSchema>;
         slashCommands: Collection<string, SlashCommand>;
         commands: Collection<string, Command>;
         activities: Collection<string, GuildActivity>;

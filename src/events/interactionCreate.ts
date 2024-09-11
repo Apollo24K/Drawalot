@@ -2,11 +2,19 @@ import { Interaction, PermissionsBitField } from "discord.js";
 import { BotEvent, Locale, ServerSchema, UserSchema } from "../types";
 import { query } from "../postgres";
 import { queryServerSchema, queryUserSchema } from "../functions";
+import { Links } from "../shared/components";
 
 const event: BotEvent = {
     name: "interactionCreate",
     execute: async (interaction: Interaction) => {
         if (interaction.user.bot) return;
+
+        // return if banned
+        const isBanned = interaction.client.bannedUsers.get(interaction.user.id);
+        if (isBanned) {
+            if (interaction.isChatInputCommand()) interaction.reply(`Your account has been suspended${isBanned.reason ? ` for "${isBanned.reason}"` : ""}.\nIf you believe there to be a mistake, please join our support server below to appeal for this decision.\n**Support Server**: ${Links.Support}`);
+            return;
+        };
 
         if (interaction.isChatInputCommand()) {
             const command = interaction.client.slashCommands.get(interaction.commandName);

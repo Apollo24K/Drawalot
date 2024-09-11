@@ -2,6 +2,7 @@ import { ChannelType, Message } from "discord.js";
 import { checkPermissions, queryServerSchema, queryUserSchema, sendTimedMessage } from "../functions";
 import { BotEvent, Locale, ServerSchema, UserSchema } from "../types";
 import { query } from '../postgres';
+import { Links } from "../shared/components";
 
 const event: BotEvent = {
     name: "messageCreate",
@@ -22,6 +23,13 @@ const event: BotEvent = {
                 // Execute activity
                 activity.execute({ message, activity });
             };
+        };
+
+        // return if banned
+        const isBanned = message.client.bannedUsers.get(message.author.id);
+        if (isBanned) {
+            message.channel.send(`Your account has been suspended${isBanned.reason ? ` for "${isBanned.reason}"` : ""}.\nIf you believe there to be a mistake, please join our support server below to appeal for this decision.\n**Support Server**: ${Links.Support}`);
+            return;
         };
 
         // Create Prefix

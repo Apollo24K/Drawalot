@@ -1,5 +1,5 @@
 import { SlashCommandBuilder } from "discord.js";
-import { SlashCommand } from "../types";
+import { BanSchema, SlashCommand } from "../types";
 import { query } from "../postgres";
 import { insertCharacter, search } from "../functions";
 
@@ -16,7 +16,7 @@ const exportCommand: SlashCommand = {
 
         const user = interaction.options.getUser('user') || null;
         let action = interaction.options.getString('action') || "";
-        const ephemeral = interaction.options.getBoolean('ephemeral') || true;
+        const ephemeral = interaction.options.getBoolean('ephemeral') ?? true;
 
         let args = action.trim().split(/ +/g);
         const cmd = args.shift()?.toLowerCase() as string;
@@ -26,7 +26,7 @@ const exportCommand: SlashCommand = {
 
         // List all actions
         if (action === "list") {
-            return interaction.reply({ content: ">>> `list`\n`set <key> <value> [--table] [WHERE condition]`\n`leave server <guildId>`\n`query <sql>`\n`dm <message>`\n`say <message>`", ephemeral });
+            return interaction.reply({ content: ">>> `list`\n`set <key> <value> [--table] [WHERE condition]`\n`leave server <guildId>`\n`query <sql>`\n`dm <message>`\n`say <message>`\n`ban <reason> user:@user`", ephemeral });
         };
 
         // Set db
@@ -76,10 +76,32 @@ const exportCommand: SlashCommand = {
 
         // Query DB
         if (cmd === "query") {
-            if (args[0].toUpperCase() === "DROP" || args[0].toUpperCase() === "ALTER" || args[0].toUpperCase() === "DELETE" || args[0].toUpperCase() === "TRUNCATE") return interaction.reply({ content: "not allowed", ephemeral });
+            if (args[0].toUpperCase() === "DROP" || args[0].toUpperCase() === "ALTER" || args[0].toUpperCase() === "DELETE" || args[0].toUpperCase() === "TRUNCATE" || args[0].toUpperCase() === "CREATE") return interaction.reply({ content: "not allowed", ephemeral });
             const res = await query(args.join(" ") + (user ? ` WHERE id = ${user.id}` : "")) as any[];
             if (res.length) return interaction.reply({ content: JSON.stringify(res).slice(0, 2000), ephemeral });
             return interaction.reply({ content: "Action Successful", ephemeral });
+        };
+
+        // Ban user
+        if (cmd === "ban") {
+            if (!user) return interaction.reply({ content: "Error: missing user object\n\nUsage: `/admin ban <reason> user:@user`", ephemeral });
+
+            if (!interaction.client.bannedUsers.has(user.id)) {
+                const banDetails = await query("INSERT INTO bans (id, banned_by, reason) VALUES ($1, $2, $3) RETURNING *", [user.id, interaction.user.id, args.join(" ") || null]) as { rows: BanSchema[]; };
+                interaction.client.bannedUsers.set(user.id, banDetails.rows[0]);
+            };
+
+            return interaction.reply({ content: `${user.username} was banned from using drawalot`, ephemeral });
+        };
+
+        // Unban user
+        if (cmd === "unban") {
+            if (!user) return interaction.reply({ content: "Error: missing user object\n\nUsage: `/admin unban user:@user`", ephemeral });
+
+            await query("DELETE FROM bans WHERE id = $1", [user.id]);
+            interaction.client.bannedUsers.delete(user.id);
+
+            return interaction.reply({ content: `${user.username} was unbanned`, ephemeral });
         };
 
         // Send DM

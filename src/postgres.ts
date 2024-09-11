@@ -46,6 +46,7 @@ export const query = async (text: string, params?: any[]) => {
         drawstotal INT DEFAULT 0 NOT NULL,
         claims INT DEFAULT 0 NOT NULL,
         claimstotal INT DEFAULT 0 NOT NULL,
+        drawresets INT DEFAULT 0 NOT NULL,
         votestotal INT DEFAULT 0 NOT NULL,
         votereminder BOOLEAN DEFAULT FALSE NOT NULL,
         transactions JSONB DEFAULT '[]' NOT NULL
@@ -88,6 +89,13 @@ export const query = async (text: string, params?: any[]) => {
         FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
         FOREIGN KEY (char_id) REFERENCES characters(id) ON DELETE CASCADE,
         CONSTRAINT unique_id_char_id UNIQUE (id, char_id)
+    )`);
+    await query(`CREATE TABLE IF NOT EXISTS bans (
+        id TEXT PRIMARY KEY NOT NULL,
+        banned_by TEXT NOT NULL,
+        reason TEXT,
+        expires TIMESTAMP,
+        created TIMESTAMP DEFAULT NOW()
     )`);
 
 })();

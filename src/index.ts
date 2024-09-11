@@ -1,5 +1,5 @@
 import { Client, GatewayIntentBits, Partials, Options, Collection } from "discord.js";
-import { BotHandler, Command, IAnimeInfo, ICharacterInfo, SlashCommand, GuildActivity } from "./types";
+import { BotHandler, Command, IAnimeInfo, ICharacterInfo, SlashCommand, GuildActivity, BanSchema } from "./types";
 import { config } from "dotenv";
 import { readdirSync } from "fs";
 import { join } from "path";
@@ -23,6 +23,7 @@ clients.forEach((client, index) => {
     client.id = tokens[index].id;
     client.token = tokens[index].token;
 
+    client.bannedUsers = new Collection<string, BanSchema>();
     client.slashCommands = new Collection<string, SlashCommand>();
     client.commands = new Collection<string, Command>();
     client.activities = new Collection<string, GuildActivity>();

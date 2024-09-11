@@ -2,6 +2,7 @@ import { ButtonInteraction, ChatInputCommandInteraction, Collection, DMChannel, 
 import { DropRates, Gender, IAnimeInfo, ICharacterInfo, InventorySchema, Rarity, ServerSchema, UserSchema } from "./types";
 import { query } from "./postgres";
 import Inventory, { InventoryEntry } from "./shared/inventory";
+import { defaultDropRates } from "./shared/components";
 
 export const checkPermissions = (member: GuildMember, permissions: Array<PermissionResolvable>) => {
     let neededPermissions: PermissionResolvable[] = [];
@@ -124,15 +125,7 @@ export const daysSince = (lastDate: Date) => {
 };
 
 export const drawCharacter = (characters: Collection<number, ICharacterInfo>, flags: { gender?: Gender; } = {}, overrideDropRates?: DropRates): ICharacterInfo | undefined => {
-    const dropRates: DropRates = overrideDropRates ?? [
-        { rarity: 0, rate: 0.58 },
-        { rarity: 1, rate: 0.25 },
-        { rarity: 2, rate: 0.11 },
-        { rarity: 3, rate: 0.042 },
-        { rarity: 4, rate: 0.014 },
-        { rarity: 5, rate: 0.0039 },
-        { rarity: 6, rate: 0.0001 },
-    ];
+    const dropRates = overrideDropRates ?? defaultDropRates;
 
     const selectedRarity: Rarity = (() => {
         const random = Math.random();

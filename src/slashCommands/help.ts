@@ -12,9 +12,9 @@ const command = new SlashCommandBuilder()
 
 const exportCommand: SlashCommand = {
     command,
-    cooldown: 5,
+    cooldown: 2,
     execute: async ({ interaction }) => {
-        const helpCommand = interaction.options.getString('command');
+        let helpCommand = interaction.options.getString('command') ?? "";
 
         if (!helpCommand) {
             const Embed = new EmbedBuilder()
@@ -23,7 +23,7 @@ const exportCommand: SlashCommand = {
                 .setThumbnail(botPfp)
                 .setDescription("Use `/help <command name>` for more information")
                 .addFields(
-                    { name: "🎴 Card Game", value: "`/draw` `/cd` `/info` `/inventory` `/search` `/rush`\n`/fav` `/setup channel` `/profile`" },
+                    { name: "🎴 Card Game", value: "`/draw` `/cd` `/info` `/inventory` `/search` `/rush`\n`/fav` `/setup channel` `/profile` `/reset draws`" },
                     { name: "💰 Economy", value: "`/balance` `/daily` `/convert`" },
                     // { name: "🎭 Fun", value: "Nothing yet" },
                     { name: "💎 Premium", value: "`/premium` `/shop`" },
@@ -31,6 +31,11 @@ const exportCommand: SlashCommand = {
                 )
                 .setFooter({ text: `Drawalot V${process.env.VERSION} • Made by Apollo24`, iconURL: "https://i.imgur.com/RbLjdQ4.png" });
             return interaction.reply({ embeds: [Embed] });
+        };
+
+        // Help command shortcuts
+        switch (helpCommand) {
+            case "ad": helpCommand = "activity drops"; break;
         };
 
         // Help pages
