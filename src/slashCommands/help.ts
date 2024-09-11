@@ -23,7 +23,7 @@ const exportCommand: SlashCommand = {
                 .setThumbnail(botPfp)
                 .setDescription("Use `/help <command name>` for more information")
                 .addFields(
-                    { name: "🎴 Card Game", value: "`/draw` `/cd` `/info` `/inventory` `/search` `/rush`\n`/fav` `/setup channel` `/profile` `/reset draws`" },
+                    { name: "🎴 Card Game", value: "`/draw` `/cd` `/info` `/inventory` `/search` `/rush`\n`/fav` `/setup channel` `/profile` `/reset draws`\n`/change code`" },
                     { name: "💰 Economy", value: "`/balance` `/daily` `/convert`" },
                     // { name: "🎭 Fun", value: "Nothing yet" },
                     { name: "💎 Premium", value: "`/premium` `/shop`" },

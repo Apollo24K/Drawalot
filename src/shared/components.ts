@@ -139,6 +139,7 @@ export const playerPremium: PremiumInfo[] = [
             { name: "Increased Claims", value: ["5 claims per interval instead of 3!"] },
             { name: "Increased Daily Rewards", value: ["Get 50% more coins!"] },
             { name: "Extended Rush", value: ["Get 75 seconds of time during </rush:1280671324007563334> instead of 45!"] },
+            { name: "Card Customization", value: ["Change the code of your cards with `/change code`!"] },
         ]
     },
     {
@@ -150,6 +151,7 @@ export const playerPremium: PremiumInfo[] = [
             { name: "Increased Claims", value: ["6 claims per interval instead of 3!"] },
             { name: "Increased Daily Rewards", value: ["Get 80% more coins!"] },
             { name: "Extended Rush", value: ["Get 90 seconds of time during </rush:1280671324007563334> instead of 45!"] },
+            { name: "Card Customization", value: ["Change the code of your cards with `/change code`!"] },
         ]
     },
 ];
